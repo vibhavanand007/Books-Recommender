@@ -1,1 +1,1 @@
-## Book recommendation end-to-end project
+## Book Recommendation end-to-end project
