@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 50 Books</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/recommend">Recommendations</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Top 50 Books</h1>
+        <div class="book-list">
+            {% for book in books %}
+            <div class="book">
+                <img src="{{ book['Image-URL-M'] }}" alt="{{ book['Book-Title'] }}">
+                <h3>{{ book['Book-Title'] }}</h3>
+                <p>by {{ book['Book-Author'] }}</p>
+                <p>Rating: {{ book['avg_ratings'] }} | Votes: {{ book['num_ratings'] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Book Recommender. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+/* Ensure overall styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center; /* Center-aligns the text in the header */
+}
+
+nav {
+    display: inline-block; /* Ensures nav is not full width */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center-aligns the list items */
+}
+
+nav li {
+    margin: 0 1em; /* Adds horizontal spacing between items */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em; /* Adds padding for better spacing */
+    display: inline-block; /* Ensures clickable area is sufficient */
+}
+
+main {
+    padding: 1em;
+}
+
+/* Grid layout for book-list and recommendations */
+.book-list,
+.recommendations {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+}
+
+.book {
+    border: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.book img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

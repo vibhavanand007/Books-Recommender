@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendations</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/recommend">Recommendations</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Book Recommendations</h1>
+        <form action="/recommend_books" method="POST">
+            <label for="user_input">Enter a Book Title:</label>
+            <input type="text" id="user_input" name="user_input" required>
+            <button type="submit">Get Recommendations</button>
+        </form>
+
+        {% if data %}
+        <div class="recommendations">
+            {% for item in data %}
+            <div class="book">
+                <img src="{{ item[2] }}" alt="{{ item[0] }}">
+                <h3>{{ item[0] }}</h3>
+                <p>by {{ item[1] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% elif error %}
+        <p>{{ error }}</p>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Book Recommender. All rights reserved.</p>
+    </footer>
+</body>
+</html>
