@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import pickle
+import compress_pickle
 import numpy as np
 
 app = Flask(__name__)
@@ -7,7 +8,7 @@ app = Flask(__name__)
 # Load pickle files
 popular_df = pickle.load(open('popular_df.pkl', 'rb'))
 pt = pickle.load(open('pt.pkl', 'rb'))
-books = pickle.load(open('books.pkl', 'rb'))
+books = compress_pickle.load('books.gz', compression="gzip")
 similarity_scores = pickle.load(open('similarity_scores.pkl', 'rb'))
 
 
